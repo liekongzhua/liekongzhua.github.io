@@ -2,13 +2,57 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=https://www.liekong.net" />
     <title>正在跳转...</title>
-    <script>
-      window.location.href = "https://www.liekong.net";
-    </script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding-top: 100px;
+      }
+      h1 {
+        color: #333;
+      }
+      #countdown {
+        font-size: 2em;
+        color: #007acc;
+        margin-top: 20px;
+      }
+      .footer {
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      a {
+        color: #007acc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <p>正在跳转至 <a href="https://www.liekong.net">裂空机场</a>，如果页面没有自动跳转，请点击链接。</p>
+    <h1>正在跳转到裂空机场...</h1>
+    <p>请稍候，<span id="countdown">5</span> 秒后将跳转到裂空机场。</p>
+
+    <div class="footer">
+      永久官网：
+      <a href="https://liekongzhua.github.io" target="_blank">https://liekongzhua.github.io</a>
+    </div>
+
+    <script>
+      let seconds = 5;
+      const countdownEl = document.getElementById('countdown');
+
+      const timer = setInterval(() => {
+        seconds--;
+        countdownEl.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.href = "https://bac.com";
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
